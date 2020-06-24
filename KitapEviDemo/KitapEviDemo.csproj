@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C4E06BAC-AC5B-40F8-8DF3-FB8C0A76B40A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KitapEviDemo</RootNamespace>
+    <AssemblyName>KitapEviDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\CategoryDal.cs" />
+    <Compile Include="Dal\CompanyDal.cs" />
+    <Compile Include="Dal\CustomerDal.cs" />
+    <Compile Include="Dal\EmployeeDal.cs" />
+    <Compile Include="Dal\OrderDal.cs" />
+    <Compile Include="Dal\OrderDetailDal.cs" />
+    <Compile Include="Forms\CategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryAdd.Designer.cs">
+      <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoryDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryDelete.Designer.cs">
+      <DependentUpon>CategoryDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryForm.Designer.cs">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CategoryUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CategoryUpdate.Designer.cs">
+      <DependentUpon>CategoryUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyAdd.Designer.cs">
+      <DependentUpon>CompanyAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyDelete.Designer.cs">
+      <DependentUpon>CompanyDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyForm.Designer.cs">
+      <DependentUpon>CompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyUpdate.Designer.cs">
+      <DependentUpon>CompanyUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerAdd.Designer.cs">
+      <DependentUpon>CustomerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerDelete.Designer.cs">
+      <DependentUpon>CustomerDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CustomerUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CustomerUpdate.Designer.cs">
+      <DependentUpon>CustomerUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetailAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetailAdd.Designer.cs">
+      <DependentUpon>DetailAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetailDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetailDelete.Designer.cs">
+      <DependentUpon>DetailDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetailUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetailUpdate.Designer.cs">
+      <DependentUpon>DetailUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeesForm.Designer.cs">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeAdd.Designer.cs">
+      <DependentUpon>EmployeeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeDelete.Designer.cs">
+      <DependentUpon>EmployeeDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EmployeeUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeUpdate.Designer.cs">
+      <DependentUpon>EmployeeUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGecis.cs" />
+    <Compile Include="Forms\OrderAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderAdd.Designer.cs">
+      <DependentUpon>OrderAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderDelete.Designer.cs">
+      <DependentUpon>OrderDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderDetailsForm.Designer.cs">
+      <DependentUpon>OrderDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrdersForm.Designer.cs">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OrderUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OrderUpdate.Designer.cs">
+      <DependentUpon>OrderUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductAdd.Designer.cs">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductDelete.Designer.cs">
+      <DependentUpon>ProductDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ProductUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductUpdate.Designer.cs">
+      <DependentUpon>ProductUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dal\ProductDal.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Company.cs" />
+    <Compile Include="Entities\Customer.cs" />
+    <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\NorthwindContext.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderDetail.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Migrations\202006141114432_InitialCreate.cs" />
+    <Compile Include="Migrations\202006141114432_InitialCreate.designer.cs">
+      <DependentUpon>202006141114432_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141200337_CreateQuantityPerUnit2ColumnInProductsTable.cs" />
+    <Compile Include="Migrations\202006141200337_CreateQuantityPerUnit2ColumnInProductsTable.designer.cs">
+      <DependentUpon>202006141200337_CreateQuantityPerUnit2ColumnInProductsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141202570_DeleteQuantityPerUnitColumnInProductsTable.cs" />
+    <Compile Include="Migrations\202006141202570_DeleteQuantityPerUnitColumnInProductsTable.designer.cs">
+      <DependentUpon>202006141202570_DeleteQuantityPerUnitColumnInProductsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141204156_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable.cs" />
+    <Compile Include="Migrations\202006141204156_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable.designer.cs">
+      <DependentUpon>202006141204156_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141206593_DeleteQuantityPerUnitColumnInProductsTable1.cs" />
+    <Compile Include="Migrations\202006141206593_DeleteQuantityPerUnitColumnInProductsTable1.designer.cs">
+      <DependentUpon>202006141206593_DeleteQuantityPerUnitColumnInProductsTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141207522_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable1.cs" />
+    <Compile Include="Migrations\202006141207522_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable1.designer.cs">
+      <DependentUpon>202006141207522_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141327248_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable2.cs" />
+    <Compile Include="Migrations\202006141327248_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable2.designer.cs">
+      <DependentUpon>202006141327248_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141428305_CreateProduxtListModelTable.cs" />
+    <Compile Include="Migrations\202006141428305_CreateProduxtListModelTable.designer.cs">
+      <DependentUpon>202006141428305_CreateProduxtListModelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141430298_DeleteMyProCompanypertyColumnInProductListModelsTable.cs" />
+    <Compile Include="Migrations\202006141430298_DeleteMyProCompanypertyColumnInProductListModelsTable.designer.cs">
+      <DependentUpon>202006141430298_DeleteMyProCompanypertyColumnInProductListModelsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141444134_DeleteProductListModelTable.cs" />
+    <Compile Include="Migrations\202006141444134_DeleteProductListModelTable.designer.cs">
+      <DependentUpon>202006141444134_DeleteProductListModelTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Forms\ProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProductsForm.Designer.cs">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\CategoryListModel.cs" />
+    <Compile Include="ViewModels\CategoryMainListModel.cs" />
+    <Compile Include="ViewModels\CompanyListModel.cs" />
+    <Compile Include="ViewModels\CompanyMainListModel.cs" />
+    <Compile Include="ViewModels\CustomerComboBoxListModel.cs" />
+    <Compile Include="ViewModels\CustomerListModel.cs" />
+    <Compile Include="ViewModels\EmployeeComboBoxListModel.cs" />
+    <Compile Include="ViewModels\EmployeeListModel.cs" />
+    <Compile Include="ViewModels\OrderDetailListModel.cs" />
+    <Compile Include="ViewModels\OrderListModel.cs" />
+    <Compile Include="ViewModels\ProductComboBoxListModel.cs" />
+    <Compile Include="ViewModels\ProductListModel.cs" />
+    <EmbeddedResource Include="Forms\CategoryAdd.resx">
+      <DependentUpon>CategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoryDelete.resx">
+      <DependentUpon>CategoryDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoryForm.resx">
+      <DependentUpon>CategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CategoryUpdate.resx">
+      <DependentUpon>CategoryUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyAdd.resx">
+      <DependentUpon>CompanyAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyDelete.resx">
+      <DependentUpon>CompanyDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyForm.resx">
+      <DependentUpon>CompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyUpdate.resx">
+      <DependentUpon>CompanyUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerAdd.resx">
+      <DependentUpon>CustomerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerDelete.resx">
+      <DependentUpon>CustomerDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CustomerUpdate.resx">
+      <DependentUpon>CustomerUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetailAdd.resx">
+      <DependentUpon>DetailAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetailDelete.resx">
+      <DependentUpon>DetailDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetailUpdate.resx">
+      <DependentUpon>DetailUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeesForm.resx">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeAdd.resx">
+      <DependentUpon>EmployeeAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeDelete.resx">
+      <DependentUpon>EmployeeDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeUpdate.resx">
+      <DependentUpon>EmployeeUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderAdd.resx">
+      <DependentUpon>OrderAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderDelete.resx">
+      <DependentUpon>OrderDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderDetailsForm.resx">
+      <DependentUpon>OrderDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrdersForm.resx">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OrderUpdate.resx">
+      <DependentUpon>OrderUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductAdd.resx">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductDelete.resx">
+      <DependentUpon>ProductDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductUpdate.resx">
+      <DependentUpon>ProductUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141114432_InitialCreate.resx">
+      <DependentUpon>202006141114432_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141200337_CreateQuantityPerUnit2ColumnInProductsTable.resx">
+      <DependentUpon>202006141200337_CreateQuantityPerUnit2ColumnInProductsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141202570_DeleteQuantityPerUnitColumnInProductsTable.resx">
+      <DependentUpon>202006141202570_DeleteQuantityPerUnitColumnInProductsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141204156_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable.resx">
+      <DependentUpon>202006141204156_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141206593_DeleteQuantityPerUnitColumnInProductsTable1.resx">
+      <DependentUpon>202006141206593_DeleteQuantityPerUnitColumnInProductsTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141207522_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable1.resx">
+      <DependentUpon>202006141207522_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProductsForm.resx">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141327248_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable2.resx">
+      <DependentUpon>202006141327248_RenameQuantityPerUnit2toQuantityPerUnitInProductsTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141428305_CreateProduxtListModelTable.resx">
+      <DependentUpon>202006141428305_CreateProduxtListModelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141430298_DeleteMyProCompanypertyColumnInProductListModelsTable.resx">
+      <DependentUpon>202006141430298_DeleteMyProCompanypertyColumnInProductListModelsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141444134_DeleteProductListModelTable.resx">
+      <DependentUpon>202006141444134_DeleteProductListModelTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
